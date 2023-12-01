@@ -20,5 +20,11 @@ void Form::start() {
     QString str = ui->str->text();
     QString sub_str = ui->sub_str->text();
 
-    ui->result->setText("result.....");
+    // Поиск подстроки в строке
+    int index = str.indexOf(sub_str);
+    if (index != -1) {
+        ui->result->setText("Подстрока найдена на позиции " + QString::number(index));
+    } else {
+        ui->result->setText("Подстрока не найдена");
+    }
 }
